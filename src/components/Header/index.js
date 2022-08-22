@@ -27,6 +27,7 @@ function Header()   {
               target="_blank"
               href=""
             >
+              <img className="Logo" src={process.env.PUBLIC_URL + '/images/SoulDesirelogo.jpg'} alt="Logo"/>
               <span className="content is-large">Soul Desire Tarot LLC</span>
             </a>
           </div>
