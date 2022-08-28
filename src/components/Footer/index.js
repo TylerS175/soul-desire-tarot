@@ -1,18 +1,21 @@
-import React from 'react';
+import React from "react";
 
 function Footer() {
-    return(
-        <footer className="footer">
-            <div className="text-centered">
-            <p>
-                <strong>@2023 Soul Desire Tarot LLC</strong> -Created By {""}
-                <h2>
-                    Disclaimer: This readings based are currently energy. I am not responsbile for any actions that are taken based on the reading outcome. 
-                </h2>
-            </p>
-            </div>
-        </footer>
-    );
+  return (
+    <div className="footer">
+      <footer className="py-5 bg-dark fixed-bottom">
+        <div className="">
+          <p className="m-0 text-left text-white">
+            Copyright &copy; Soul Desire Tarot LLC 2023
+          </p>
+            <p classname="text-white">Stay Connected</p>
+            <a href="https://www.instagram.com/souldesiretarot/" className="fa fa-instagram INSTA"></a>
+            
+        </div>
+
+      </footer>
+    </div>
+  );
 }
 
 export default Footer;

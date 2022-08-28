@@ -1,46 +1,31 @@
-import React, { useState } from 'react';
-import Navigation from "../Navigation";
-import Reading from "../Reading";
-import About from "../About";
+import React from 'react';
+import { NavLink } from 'react-router-dom';
 
-function Header()   {
-    const [currentPage, handlePageChange] = useState("about");
-
-    const renderPage = () => {
-        switch (currentPage) {
-            case "About":
-                return <About />;
-            case "Book A Private Reading":
-                return <Reading />;
-            default:
-                return <About />;
-        }
-    };
-  
-    return (
-      <div className="row">
-        <nav className="navbar">
-          <div className="navbar-brand">
-            <a
-              className="navbar-item"
-              rel="noreferrer"
-              target="_blank"
-              href=""
-            >
-              <img className="Logo" src={process.env.PUBLIC_URL + '/images/SoulDesirelogo.jpg'} alt="Logo"/>
-              <span className="content is-large">Soul Desire Tarot LLC</span>
-            </a>
-          </div>
-        </nav>
-        <Navigation
-          currentPage={currentPage}
-          handlePageChange={handlePageChange}
-        /> 
-         <main>
-          <div>{renderPage(currentPage)}</div>
-        </main>
-      </div>
-    );
-  }
+function Header() {
+  return (
+    <div className="navigation">
+    <nav className="navbar navbar-expand navbar-dark bg-dark">
+      <div className="container">
+        <NavLink className="navbar-brand" to="/Home">
+          Soul Desire Tarot LLC 
+          </NavLink>
+        </div>
+        <ul className="navbar-nav ml-auto">
+          <li className="nav-item">
+            <NavLink className="nav-link" to="/Home">
+            Home
+            <span className="sr-only">(current)</span>
+            </NavLink>
+          </li>
+          <li className="nav-item">
+            <NavLink className="nav-link" to="/Reading">
+              Book a Private Reading
+            </NavLink>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  );
+}
 
 export default Header;
